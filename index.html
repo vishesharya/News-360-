@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News 360: Made in India</title>
+
+  <!-- css part -->
+   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #eee;
+    }
+    
+    header {
+      background: linear-gradient(to right, #6F86D6, #48C6EF);
+      padding: 10px;
+    }
+    
+    
+    h1 {
+      font-size: 2em;
+      color: #fff;
+      margin-bottom: 10px;
+      float: right;
+
+    
+
+    }
+    
+    form{
+      font-size: 2em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    nav ul {
+
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    
+    }
+    
+    nav li {
+      margin-right: 10px;
+    }
+    
+    nav a {
+      color: #fff;
+      padding: 5px;
+      text-decoration: none;
+    }
+    
+    nav a:hover {
+      background-color: #fff;
+      color: #6F86D6;
+      border-radius: 5px;
+    }
+    
+    main {
+      margin: 10px;
+    }
+    
+    section {
+      margin: 10px;
+    }
+    
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    
+    .article {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    
+    .article img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .article h3 {
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+    
+    .article h3 {
+      color: #333;
+      text-decoration: none;
+      border: 1px solid #6F86D6;
+      border-radius: 5px;
+      padding: 5px;
+      background: linear-gradient(to right, #6F86D6, #48C6EF);
+    }
+    
+    .article p {
+      font-size: 1em;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    
+    
+   
+    footer {
+      background: linear-gradient(to right, #48C6EF, #6F86D6);
+      padding: 10px;
+      color: #fff;
+      text-align: center;
+      align-content: center;
+      align-items: center;
+      
+    }
+    .result-text{
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .loder{
+      margin-left: 50%;
+
+    }
+
+    .button-85 {
+      padding: 0.6em 2em;
+      border: none;
+      outline: none;
+      color: rgb(255, 255, 255);
+      background: #111;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 10px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    
+    .button-85:before {
+      content: "";
+      background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+      );
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing-button-85 20s linear infinite;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+    }
+    
+    @keyframes glowing-button-85 {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+    
+    .button-85:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #222;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+
+    .button-86 {
+      all: unset;
+     
+      font-size: 16px;
+      background: transparent;
+      border: none;
+      position: relative;
+      color: #f0f0f0;
+      cursor: pointer;
+      z-index: 1;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      
+    }
+    
+    .button-86::after,
+    .button-86::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: -99999;
+      transition: all .4s;
+    }
+    
+    .button-86::before {
+      transform: translate(0%, 0%);
+      width: 100%;
+      height: 100%;
+      background: #28282d;
+      border-radius: 10px;
+    }
+    
+    .button-86::after {
+      transform: translate(10px, 10px);
+      width: 35px;
+      height: 35px;
+      background: #ffffff15;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border-radius: 50px;
+    }
+    
+    .button-86:hover::before {
+      transform: translate(5%, 20%);
+      width: 110%;
+      height: 110%;
+    }
+    
+    .button-86:hover::after {
+      border-radius: 10px;
+      transform: translate(0, 0);
+      width: 100%;
+      height: 100%;
+    }
+    
+    .button-86:active::after {
+      transition: 0s;
+      transform: translate(0, 5%);
+    }
+    
+    .button-63 {
+      height: 20px;
+      width: 30px;
+      align-items: center;
+      background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+      border: 0;
+      border-radius: 8px;
+      box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      display: flex;
+      font-family: Phantomsans, sans-serif;
+      font-size: 20px;
+      justify-content: center;
+      line-height: 1em;
+      max-width: 100%;
+      min-width: 140px;
+      padding: 19px 24px;
+      text-decoration: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    
+    .button-63:active,
+    .button-63:hover {
+      outline: 0;
+    }
+    
+    @media (min-width: 768px) {
+      .button-63 {
+        font-size: 24px;
+        min-width: 196px;
+      }
+    }
+
+   
+    
+
+
+  
+    
+   </style>
+
+
+
+
+</head>
+
+<body>
+
+  <!-- header part -->
+  <header>
+    <div class="se">
+      <!-- heading -->
+      <h1>News 360</h1>
+      <!-- search bar -->
+      <form class="form4" role="search">
+        <input style="margin-bottom: 10px;" class="button-85" name="q" type="search" placeholder="Search" aria-label="Search">
+        <input style="margin-bottom: 10px;" class="button-85" name="pageno" type="hidden" value="1" placeholder="Search" aria-label="Search">
+        <button class="button-85" type="submit">Search</button>
+      </form>
+
+    </div>
+    
+<!-- nav links -->
+    
+   <nav>
+			<ul>
+				<li><a href="/?q=all&pageno=1">Home</a></li>
+				<li><a href="/?q=world&pageno=1">World</a></li>
+				<li><a href="/?q=Politics&pageno=1">Politics</a></li>
+				<li><a href="/?q=Business&pageno=1">Business</a></li>
+				<li><a href="/?q=Technology&pageno=1">Technology</a></li>
+				<li><a href="/?q=Science&pageno=1">Science</a></li>
+				<li><a href="/?q=sports&pageno=1">Sports</a></li>
+				<li><a href="/?q=Entertainment&pageno=1">Entertainment</a></li>
+			</ul>
+
+        
+      
+		</nav>
+	</header>
+
+  <!-- main section -->
+	<main>
+		<section>
+			<div>
+        <!-- print result query -->
+        <p class="result-text"><span id="queryText"></span> - News 360 (<span id="queryResults"></span> results)</p>
+        <!-- content section -->
+        <div id="content" class="row">
+          <div>
+           <img style=" margin-bottom: 700px;" class="loder"  >
+          </div>
+        </div>
+    
+			
+		
+		</section>
+    
+	</main>
+
+  <!-- footer -->
+	<footer>
+    <div>
+      <nav>
+        <!-- perivous or next button -->
+        <ul>
+          <li ><a id="pre" class="button-86" href="#">Previous</a></li>
+
+          <li><a id="next" class="button-86" href="#">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+		<p>© 2023 Vishesh Arya</p>
+	</footer>
+  
+
+ 
+
+   
+
+
+
+
+  
+
+ 
+  
+  <script>
+    let articlesPerPage;
+    let totalPages;
+    console.log("Hey I am javascript")
+    let query = window.location.search.split("?")[1].split("&")[0].split("=")[1];
+    let page = parseInt(window.location.search.split("?")[1].split("&")[1].split("=")[1]);
+    console.log(query, page)
+    const fetchNews = async (query, pageNo)=>{
+        let a = await fetch(`/api?q=${query}&apiKey=3ff3b2e893c74fbbb3af0ca19d47018a&pageSize=10&page=${pageNo}`)
+        let r = await a.json()
+        console.log(r)
+        queryText.innerHTML = query.replace("+", " ")
+        queryResults.innerHTML = r.totalResults
+        totalPages = Math.ceil(r.totalResults/articlesPerPage)
+        pre.href = `/?q=${query}&pageno=${page-1}`
+        next.href = `/?q=${query}&pageno=${page+1}`
+        let str = ""
+        for(let item of r.articles){
+          let date = new Date(item.publishedAt).toLocaleDateString()
+          str = str + `
+            <div class="article">
+            <img src="${item.urlToImage}" alt="Article Image">
+            <a class="button-63" href="${item.url}" >Read More...</a>
+            <p>${item.title}</p>
+            <small>News Date : ${date}</small>
+          </div>`
+        }
+        content.innerHTML = str;
+    }
+
+    fetchNews(query, page)
+
+  </script>
+</body>
+
+</html>
